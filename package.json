@@ -1,6 +1,6 @@
 {
-  "name": "practice-exams-platform",
-  "version": "1.5.0",
+  "name": "Practice Tests Exams Platform",
+  "version": "2.0.0",
   "private": true,
   "engines": {
     "node": "24.x"
