@@ -6,6 +6,7 @@ import Footer from "@practice-tests-exams-platform/components/Footer";
 import ApolloProvider from "@practice-tests-exams-platform/components/ApolloProvider";
 import Cookie from "@practice-tests-exams-platform/components/Cookie";
 import GoogleAnalytics from "@practice-tests-exams-platform/components/GoogleAnalytics";
+import GoogleAdSense from "@practice-tests-exams-platform/components/GoogleAdSense";
 import { AuthProvider } from "@practice-tests-exams-platform/contexts/AuthContext";
 import { ThemeProvider } from "@practice-tests-exams-platform/contexts/ThemeContext";
 import { TrialWarning } from "@practice-tests-exams-platform/components/TrialWarning";
@@ -135,6 +136,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 <Footer />
                 <Cookie />
                 <GoogleAnalytics />
+                <GoogleAdSense />
                 <TrialWarning />
               </main>
             </AuthProvider>

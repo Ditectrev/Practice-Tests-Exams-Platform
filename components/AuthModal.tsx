@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { Button } from "./Button";
 
@@ -34,6 +35,20 @@ export const AuthModal: React.FC<AuthModalProps> = ({
     type: string;
     value: string;
   } | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isOpen]);
 
   // Load last used method from localStorage
   useEffect(() => {
@@ -67,7 +82,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
     }
   }, [isAuthenticated, isOpen, onClose]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !mounted) return null;
 
   const handleEmailSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -155,13 +170,30 @@ export const AuthModal: React.FC<AuthModalProps> = ({
     }
   };
 
-  return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-slate-800 rounded-lg p-6 w-full max-w-md">
+  return createPortal(
+    <div
+      className="fixed inset-0 z-[100] flex min-h-[100dvh] items-center justify-center overflow-y-auto bg-black/50 px-4 py-6 sm:py-10"
+      style={{
+        paddingTop: "max(1.5rem, env(safe-area-inset-top))",
+        paddingBottom: "max(1.5rem, env(safe-area-inset-bottom))",
+      }}
+      role="presentation"
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-md shrink-0 rounded-lg bg-slate-800 p-6 shadow-2xl"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="auth-modal-title"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="text-center mb-6">
           {trialExpired ? (
             <>
-              <h2 className="text-2xl font-bold text-white mb-2">
+              <h2
+                id="auth-modal-title"
+                className="text-2xl font-bold text-white mb-2"
+              >
                 Trial Expired
               </h2>
               <p className="text-slate-300">
@@ -171,7 +203,12 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             </>
           ) : (
             <>
-              <h2 className="text-2xl font-bold text-white mb-2">Sign In</h2>
+              <h2
+                id="auth-modal-title"
+                className="text-2xl font-bold text-white mb-2"
+              >
+                Sign In
+              </h2>
               <p className="text-slate-300">
                 Choose your preferred sign-in method to continue.
               </p>
@@ -325,8 +362,8 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                 {isVerifying
                   ? "Verifying..."
                   : isRedirecting
-                  ? "Redirecting..."
-                  : "Verify Code"}
+                    ? "Redirecting..."
+                    : "Verify Code"}
               </Button>
             </form>
 
@@ -437,6 +474,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 };

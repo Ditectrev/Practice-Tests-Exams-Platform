@@ -1,12 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Client, Databases, Query } from "node-appwrite";
+import {
+  appwriteApiKey,
+  appwriteEndpoint,
+  appwriteProjectId,
+} from "@practice-tests-exams-platform/lib/appwrite/env";
 
 // Initialize Appwrite client
 function getAppwriteClient() {
   const client = new Client()
-    .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT || "")
-    .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID || "")
-    .setKey(process.env.NEXT_PUBLIC_APPWRITE_API_KEY || "");
+    .setEndpoint(appwriteEndpoint)
+    .setProject(appwriteProjectId)
+    .setKey(appwriteApiKey);
 
   return new Databases(client);
 }

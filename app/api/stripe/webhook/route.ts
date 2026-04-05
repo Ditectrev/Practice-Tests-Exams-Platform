@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { Client, Databases } from "node-appwrite";
+import {
+  appwriteApiKey,
+  appwriteEndpoint,
+  appwriteProjectId,
+} from "@practice-tests-exams-platform/lib/appwrite/env";
 
 // Force dynamic rendering for webhook endpoint
 export const dynamic = "force-dynamic";
@@ -13,12 +18,12 @@ const PRICE_ID_TO_SUBSCRIPTION: Record<string, string> = {
   [(process.env.NEXT_PUBLIC_STRIPE_PRICE_DITECTREV || "").trim()]: "ditectrev",
 };
 
-// Initialize Appwrite client (trim env vars to avoid newline issues)
+// Initialize Appwrite client (values trimmed in lib/appwrite/env.ts)
 function getAppwriteClient() {
   const client = new Client()
-    .setEndpoint((process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT || "").trim())
-    .setProject((process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID || "").trim())
-    .setKey((process.env.NEXT_PUBLIC_APPWRITE_API_KEY || "").trim());
+    .setEndpoint(appwriteEndpoint)
+    .setProject(appwriteProjectId)
+    .setKey(appwriteApiKey);
 
   return new Databases(client);
 }

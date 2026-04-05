@@ -2,6 +2,11 @@ import { NextRequest, NextResponse } from "next/server";
 import { Client, Databases, Query } from "node-appwrite";
 import { ExplanationService } from "../../../lib/explanation-service";
 import crypto from "crypto";
+import {
+  appwriteApiKey,
+  appwriteEndpoint,
+  appwriteProjectId,
+} from "@practice-tests-exams-platform/lib/appwrite/env";
 
 // Decrypt API key (same logic as in api-keys route)
 function decryptApiKey(encryptedKey: string): string {
@@ -31,9 +36,9 @@ function decryptApiKey(encryptedKey: string): string {
 // Initialize Appwrite client
 function getAppwriteClient() {
   const client = new Client()
-    .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT || "")
-    .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID || "")
-    .setKey(process.env.NEXT_PUBLIC_APPWRITE_API_KEY || "");
+    .setEndpoint(appwriteEndpoint)
+    .setProject(appwriteProjectId)
+    .setKey(appwriteApiKey);
 
   return new Databases(client);
 }
