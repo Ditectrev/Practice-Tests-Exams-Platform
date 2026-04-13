@@ -43,6 +43,7 @@ jobs:
         run: |
           ENV_TYPE=${{ github.ref == 'refs/heads/main' && 'production' || 'preview' }}
           echo "${{ secrets.NEXT_PUBLIC_GA_TRACKING_ID }}" | vercel env add NEXT_PUBLIC_GA_TRACKING_ID $ENV_TYPE --token=${{ secrets.VERCEL_TOKEN }} || true
+          echo "${{ secrets.NEXT_PUBLIC_ADSENSE_CLIENT_ID }}" | vercel env add NEXT_PUBLIC_ADSENSE_CLIENT_ID $ENV_TYPE --token=${{ secrets.VERCEL_TOKEN }} || true
           echo "${{ secrets.NEXT_PUBLIC_APPWRITE_ENDPOINT }}" | vercel env add NEXT_PUBLIC_APPWRITE_ENDPOINT $ENV_TYPE --token=${{ secrets.VERCEL_TOKEN }} || true
           echo "${{ secrets.NEXT_PUBLIC_APPWRITE_PROJECT_ID }}" | vercel env add NEXT_PUBLIC_APPWRITE_PROJECT_ID $ENV_TYPE --token=${{ secrets.VERCEL_TOKEN }} || true
           echo "${{ secrets.NEXT_PUBLIC_APPWRITE_API_KEY }}" | vercel env add NEXT_PUBLIC_APPWRITE_API_KEY $ENV_TYPE --token=${{ secrets.VERCEL_TOKEN }} || true
@@ -77,6 +78,7 @@ jobs:
         env:
           # Google Analytics
           NEXT_PUBLIC_GA_TRACKING_ID: ${{ secrets.NEXT_PUBLIC_GA_TRACKING_ID }}
+          NEXT_PUBLIC_ADSENSE_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_ADSENSE_CLIENT_ID }}
 
           # Appwrite Configuration
           NEXT_PUBLIC_APPWRITE_ENDPOINT: ${{ secrets.NEXT_PUBLIC_APPWRITE_ENDPOINT }}
