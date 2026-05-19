@@ -26,9 +26,9 @@
 
 </div>
 
-## Explanations
+## Local Explanations
 
-It's possible to have them generated using [Ollama](https://ollama.com). For installation please follow https://webinstall.dev/ollama/. Whether you want to generate explanations while running the platform on `localhost`, or on `education.ditectrev.com` it's possible. For the latter, please run `OLLAMA_ORIGINS="https://education.ditectrev.com" ollama serve` and refresh the https://education.ditectrev.com page. Facing `127.0.0.1:11434: bind: address already in use`? Fix it using https://github.com/ollama/ollama/issues/707.
+You get them generated using [Ollama](https://ollama.com). For installation please follow https://webinstall.dev/ollama/. Please run `OLLAMA_ORIGINS="https://education.ditectrev.com" ollama serve` and refresh the https://education.ditectrev.com page. Facing `127.0.0.1:11434: bind: address already in use`? Fix it using https://github.com/ollama/ollama/issues/707.
 
 ## 🌟 Features
 
