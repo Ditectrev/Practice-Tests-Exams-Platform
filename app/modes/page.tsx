@@ -38,12 +38,9 @@ const Modes: NextPage = () => {
               ⚠️ Exam information is missing. Please select an exam from the
               home page.
             </div>
-            <button
-              onClick={() => (window.location.href = "/")}
-              className="btn-primary text-white px-6 py-2 rounded-lg"
-            >
+            <a href="/" className="btn-primary text-white px-6 py-2 rounded-lg">
               Go to Home
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -52,9 +49,9 @@ const Modes: NextPage = () => {
 
   return (
     <div className="mx-auto mb-6 w-full lg:w-[70vw] 2xl:w-[45%] text-center px-6 pr-8 sm:px-8 sm:pr-12 lg:px-12 lg:pr-16 modes-page">
-      <h2 className="text-gray-900 dark:text-gray-100 text-4xl text-leading font-bold uppercase mt-16">
+      <h1 className="text-gray-900 dark:text-gray-100 text-4xl text-leading font-bold uppercase mt-16">
         {name}
-      </h2>
+      </h1>
       <p className="text-gray-900 dark:text-gray-100 text-lg mt-4 mb-6 leading-6">
         Test your knowledge under pressure with our timed exam mode or explore
         and master all the questions at your own pace with our practice mode.
