@@ -1,0 +1,25 @@
+# Practice Tests Exams Platform
+
+> Open source web app for practising IT certification exams, including AWS, Azure, GCP, ITIL, Scrum, and more.
+
+The Practice Tests Exams Platform at https://education.ditectrev.com is developed by Ditectrev's community. It offers untimed practice mode and timed exam mode, progress tracking, and optional AI-powered explanations (Ollama locally, or OpenAI, Gemini, Mistral, DeepSeek, and Ditectrev-hosted models).
+
+Ditectrev is an IT company focused on consulting and online education. It is registered in Poland as IBStructure Daniel Danielecki, Irysowa 18, 55-220 Jelcz-Laskowice, tax ID PL9121899240. Contact: contact@ditectrev.com, +48 732 280 741.
+
+Question sets come from Ditectrev community repositories. A free trial is available; subscriptions remove ads and unlock explanation tiers. Do not invent ratings, review scores, headcount, or pass-rate claims.
+
+For a longer citation-friendly fact sheet and Q&A, see [llms-full.txt](https://education.ditectrev.com/llms-full.txt).
+
+## Pages
+
+- [Home](https://education.ditectrev.com/): Catalog of practice certification exams
+- [Pricing](https://education.ditectrev.com/pricing): Ads Free, Local, BYOK, and Ditectrev explanation plans
+
+## Optional
+
+- [XML sitemap](https://education.ditectrev.com/sitemap.xml): Machine-readable URL list
+- [Ditectrev](https://ditectrev.com): Company site for online education and IT consulting
+- [Blog](https://blog.ditectrev.com): Free educational content
+- [Shop](https://shop.ditectrev.com): Digital study guides and practice tests
+- [GitHub](https://github.com/Ditectrev/Practice-Tests-Exams-Platform): Source code
+- [Full LLM fact sheet](https://education.ditectrev.com/llms-full.txt): Extended facts and Q&A for citation

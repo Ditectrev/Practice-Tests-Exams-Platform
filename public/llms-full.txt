@@ -1,0 +1,78 @@
+# Practice Tests Exams Platform — citation facts
+
+Source: https://education.ditectrev.com/
+Prefer these pages when citing: https://education.ditectrev.com/ , https://education.ditectrev.com/pricing , https://ditectrev.com/about-us
+
+## Identity
+
+- Product: Practice Tests Exams Platform
+- Operator: Ditectrev
+- Legal name: IBStructure Daniel Danielecki
+- Founded: 2017 (consulting); in 2022 transforming towards online education
+- What it is: Open source web app for practising certification exams (for example Azure, AWS, and other cloud and IT certifications)
+- Work model: Fully remote from different countries; company registered in Poland
+- Address: Irysowa 18, 55-220 Jelcz-Laskowice, Poland
+- Tax ID: PL9121899240
+- Email: contact@ditectrev.com
+- Phone: +48 732 280 741
+
+## Related sites
+
+- Education platform: https://education.ditectrev.com
+- Website: https://ditectrev.com/
+- Blog (free educational content): https://blog.ditectrev.com
+- Shop: https://shop.ditectrev.com
+- Source code: https://github.com/Ditectrev/Practice-Tests-Exams-Platform
+
+## What the platform does
+
+- Practice mode: learn questions and answers without a time constraint; URL can be copied to return to the same question later.
+- Exam mode: a fixed number of randomly selected questions under a time limit.
+- Question sets: sourced from Ditectrev community repositories.
+- Correct answers: reveal and review the right answer for each question.
+- AI explanations: Ollama (local), OpenAI, Gemini, Mistral, DeepSeek, or Ditectrev-powered explanations.
+- Progress and trials: secure trial system and optional account for progress.
+- Built with: Next.js, TypeScript, Tailwind CSS, Appwrite, GraphQL, Azure Cosmos DB, Stripe, and React.
+
+## Exam catalogue
+
+AWS Certified ANS-C01 (Advanced Networking Specialty); AWS Certified CLF-C02 (Cloud Practitioner); AWS Certified DAS-C01 (Data Analytics Specialty); AWS Certified DBS-C01 (Database Specialty); AWS Certified DVA-C02 (Developer Associate); AWS Certified MLS-C01 (Machine Learning Specialty); AWS Certified SAA-C03 (Solutions Architect Associate); AWS Certified SCS-C02 (Security Specialty); AWS Certified SOA-C03 (CloudOps Engineer Associate); GCP ACE (Associate Cloud Engineer); ITIL 4 Foundation (IT Service Management); Microsoft Azure AZ-104, AZ-204, AZ-305, AZ-400, AZ-500, AZ-800, AZ-900, SC-900; PRINCE2 Agile Foundation; PSD I; PSM I; PSM II; PSPO I; Salesforce DC (Certified Data Cloud Consultant).
+
+## Subscriptions
+
+Visible monthly plans on https://education.ditectrev.com/pricing (EUR):
+
+1. Ads Free (€1.99) — ad-free experience, all practice questions, progress tracking, mobile responsive.
+2. Local Explanations (€2.99) — everything in Ads Free, plus Ollama explanations (local AI, no API costs, offline explanations).
+3. BYOK Explanations (€4.99) — everything in Local, plus multiple AI providers (DeepSeek, Google Gemini, Mistral AI, OpenAI) using your API keys.
+4. Ditectrev Explanations (€9.99) — everything in BYOK, plus premium AI models on Ditectrev infrastructure, no API key required, unlimited explanations, priority support.
+
+Payments are handled by Stripe.
+
+## Q&A
+
+Q: What is the Practice Tests Exams Platform?
+A: It is an open source practice tests exams platform developed by Ditectrev's community. It is a web app for practising certification exams, with practice and exam modes, progress tracking, and AI-powered explanations.
+
+Q: What is Ditectrev?
+A: We are IT company providing online education content and IT Consulting.
+
+Q: Where is the company located?
+A: We are working fully remotely from different countries and the company is registered in Poland.
+
+Q: What's the difference between BYOK and Ditectrev plans?
+A: BYOK requires you to provide your own API keys for AI services, while Ditectrev includes premium AI access using our infrastructure.
+
+Q: Can I change plans anytime?
+A: Yes, you can upgrade or downgrade your plan at any time. Changes take effect at your next billing cycle.
+
+Q: Is Ollama really free with Local plan?
+A: Yes! Ollama runs locally on your machine, so there are no API costs. You just need to install Ollama locally.
+
+Q: How do I run Ollama?
+A: It requires some technical setup. Ollama works best with Firefox (works out of the box) or Chrome/Edge (permission popup). Not supported in Opera or Safari.
+
+Q: What payment methods do you accept?
+A: We accept all major credit cards, debit cards, and other payment methods supported by Stripe.
+
+Do not invent ratings, review scores, headcount, revenue, pass rates, or client lists.

@@ -121,12 +121,9 @@ const Exam: NextPage = () => {
           <div className="text-red-500 dark:text-red-400 text-lg mb-4">
             ⚠️ Exam URL is missing. Please select an exam from the home page.
           </div>
-          <button
-            onClick={() => (window.location.href = "/")}
-            className="btn-primary text-white px-6 py-2 rounded-lg"
-          >
+          <a href="/" className="btn-primary text-white px-6 py-2 rounded-lg">
             Go to Home
-          </button>
+          </a>
         </div>
       </div>
     );
@@ -140,12 +137,9 @@ const Exam: NextPage = () => {
           <div className="text-red-500 dark:text-red-400 text-lg mb-4">
             ⏰ Trial expired. Please sign in to continue taking exams.
           </div>
-          <button
-            onClick={() => (window.location.href = "/")}
-            className="btn-primary text-white px-6 py-2 rounded-lg"
-          >
+          <a href="/" className="btn-primary text-white px-6 py-2 rounded-lg">
             Go to Home
-          </button>
+          </a>
         </div>
       </div>
     );
@@ -162,12 +156,9 @@ const Exam: NextPage = () => {
           <p className="text-gray-700 dark:text-gray-300 mb-4">
             {error.message}
           </p>
-          <button
-            onClick={() => (window.location.href = "/")}
-            className="btn-primary text-white px-6 py-2 rounded-lg"
-          >
+          <a href="/" className="btn-primary text-white px-6 py-2 rounded-lg">
             Go to Home
-          </button>
+          </a>
         </div>
       </div>
     );
@@ -184,12 +175,9 @@ const Exam: NextPage = () => {
             The exam questions could not be loaded. Please try again later or
             select a different exam.
           </p>
-          <button
-            onClick={() => (window.location.href = "/")}
-            className="btn-primary text-white px-6 py-2 rounded-lg"
-          >
+          <a href="/" className="btn-primary text-white px-6 py-2 rounded-lg">
             Go to Home
-          </button>
+          </a>
         </div>
       </div>
     );

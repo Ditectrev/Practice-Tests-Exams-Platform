@@ -1,6 +1,16 @@
-"use client";
-
 import Link from "next/link";
+import {
+  NOINDEX_ROBOTS,
+  NOT_FOUND_SEO,
+} from "@practice-tests-exams-platform/lib/seo";
+
+export const metadata = {
+  title: {
+    absolute: NOT_FOUND_SEO.title,
+  },
+  description: NOT_FOUND_SEO.description,
+  robots: NOINDEX_ROBOTS,
+};
 
 export default function NotFound() {
   return (

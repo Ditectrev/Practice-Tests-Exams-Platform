@@ -2,7 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useAuth } from "../contexts/AuthContext";
 import { useTheme } from "../contexts/ThemeContext";
 import { FiExternalLink } from "react-icons/fi";
@@ -11,7 +12,6 @@ import { AuthModal } from "./AuthModal";
 
 const Header = () => {
   const router = useRouter();
-  const pathname = usePathname();
   const { user, isAuthenticated, signOut } = useAuth() || {};
   const { theme } = useTheme();
   const [windowWidth, setWindowWidth] = useState<number>(0);
@@ -72,10 +72,7 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Left section - Logo */}
           <div className="flex items-center">
-            <button
-              onClick={() => router.push("/")}
-              className="flex items-center cursor-pointer"
-            >
+            <Link href="/" className="flex items-center cursor-pointer">
               <Image
                 src={theme === "light" ? "/logoBlack.svg" : "/logoWhite.svg"}
                 alt="Ditectrev Logo"
@@ -83,7 +80,7 @@ const Header = () => {
                 height={32}
                 width={120}
               />
-            </button>
+            </Link>
           </div>
 
           {/* Right section - Navigation and Auth */}
@@ -104,13 +101,13 @@ const Header = () => {
                     <ExternalLinkIcon />
                   </a>
                 ) : (
-                  <button
+                  <Link
                     key={link.href}
-                    onClick={() => router.push(link.href)}
+                    href={link.href}
                     className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200 text-sm font-medium cursor-pointer"
                   >
                     {link.title}
-                  </button>
+                  </Link>
                 ),
               )}
             </nav>
@@ -243,16 +240,14 @@ const Header = () => {
                     </span>
                   </a>
                 ) : (
-                  <button
+                  <Link
                     key={link.href}
-                    onClick={() => {
-                      router.push(link.href);
-                      setIsMobileMenuOpen(false);
-                    }}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
                     className="block w-full text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200 text-lg font-medium py-3 cursor-pointer"
                   >
                     {link.title}
-                  </button>
+                  </Link>
                 ),
               )}
 
