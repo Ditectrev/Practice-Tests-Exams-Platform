@@ -15,6 +15,7 @@ export default function robots(): MetadataRoute.Robots {
       ...AI_CRAWLERS.map((userAgent) => ({
         userAgent,
         allow: "/",
+        disallow: ["/practice?*", "/exam?*", "/modes?*"],
       })),
     ],
     sitemap: `${SITE_ORIGIN}/sitemap.xml`,
