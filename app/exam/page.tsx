@@ -11,6 +11,7 @@ import { Question } from "@practice-tests-exams-platform/components/types";
 import ExamResult from "@practice-tests-exams-platform/components/ExamResult";
 import LoadingIndicator from "@practice-tests-exams-platform/components/LoadingIndicator";
 import { useTrialAccess } from "@practice-tests-exams-platform/hooks/useTrialAccess";
+import useScrollToTop from "@practice-tests-exams-platform/hooks/useScrollToTop";
 
 const questionsQuery = gql`
   query RandomQuestions($range: Int!, $link: String) {
@@ -107,6 +108,8 @@ const Exam: NextPage = () => {
   useEffect(() => {
     setCurrentQuestion(data?.randomQuestions[0]);
   }, [data]);
+
+  useScrollToTop(currentQuestionIndex);
 
   // Show loading while checking trial access or waiting for URL
   if (isAccessBlocked === undefined || !searchParams) {
