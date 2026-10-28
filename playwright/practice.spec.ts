@@ -126,3 +126,24 @@ test("Practice should work properly", async ({ page }) => {
   await page.getByRole("button", { name: "Reveal Answer" }).click();
   await expect(page.locator("main ul")).toHaveScreenshot({ threshold: 0.02 });
 });
+
+test("Practice next question scrolls to the top", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 400 });
+  await page.goto("");
+  await page.getByRole("link", { name: "AWS Certified CLF-C02 AWS" }).click();
+  await page.getByRole("link", { name: "Practice mode Learn and" }).click();
+
+  await expect(page.locator("input[type=number]")).toHaveValue("1");
+  await page.locator("label").first().click();
+  await page.getByRole("button", { name: "Reveal Answer" }).click();
+
+  await page.evaluate(() => {
+    document.body.style.minHeight = "4000px";
+    window.scrollTo(0, 1200);
+  });
+  expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
+
+  await page.getByRole("button", { name: "Next Question" }).click();
+  await expect(page.locator("input[type=number]")).toHaveValue("2");
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
+});

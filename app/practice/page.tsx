@@ -6,6 +6,7 @@ import { useQuery } from "@apollo/client/react";
 import type { NextPage } from "next";
 import QuizForm from "@practice-tests-exams-platform/components/QuizForm";
 import { useTrialAccess } from "@practice-tests-exams-platform/hooks/useTrialAccess";
+import useScrollToTop from "@practice-tests-exams-platform/hooks/useScrollToTop";
 import LoadingIndicator from "@practice-tests-exams-platform/components/LoadingIndicator";
 
 const questionQuery = gql`
@@ -83,6 +84,8 @@ const Practice: NextPage = () => {
   useEffect(() => {
     setCurrentQuestionIndex(seq);
   }, [seq]);
+
+  useScrollToTop(currentQuestionIndex);
 
   const handleNextQuestion = (questionNo: number) => {
     // Fix off-by-one error: subtract 1 from the count since it's 1-indexed but count is 0-indexed
